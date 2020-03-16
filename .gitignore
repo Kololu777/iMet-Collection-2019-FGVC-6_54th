@@ -6,3 +6,4 @@ data
 *.log
 *.tmp
 *imetinference.py
+*datalodar.py
