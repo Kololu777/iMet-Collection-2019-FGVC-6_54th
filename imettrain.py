@@ -11,7 +11,7 @@ from tensorboardX import SummaryWriter
 from config import model_name, save_weight, cuda, fine_size, optim, all_epoch, log_dir, batch_size, lr, momentum, weight_decay, weight_name, valid_set
 from losses.loss_factory import select_criterion
 from imet_dataset import iMetDataset
-from utils.imetutils import path, data_path
+from utils.imetutils import path, data_path, binarize_prediction, _make_mask, get_score
 from models.SEResNextmodel.SEResNexthead import GAPseResNext50, GAPseResNext101
 from optim import select_optim
 if not os.path.isdir(save_weight):
@@ -20,31 +20,6 @@ if not os.path.isdir(save_weight):
 
 
 device = torch.device('cuda:0' if cuda else 'cpu')
-
-
-def binarize_prediction(probabilities, threshold: float, argsorted=None,
-                        min_labels=1, max_labels=10):
-    """ Return matrix of 0/1 predictions, same shape as probabilities.
-    """
-    assert probabilities.shape[1] == 1103
-    if argsorted is None:
-        argsorted = probabilities.argsort(axis=1)
-    max_mask = _make_mask(argsorted, max_labels)
-    min_mask = _make_mask(argsorted, min_labels)
-    prob_mask = probabilities > threshold
-    return (max_mask & prob_mask) | min_mask
-
-
-def _make_mask(argsorted, top_n: int):
-    mask = np.zeros_like(argsorted, dtype=np.uint8)
-    col_indices = argsorted[:, -top_n:].reshape(-1)
-    row_indices = [i // top_n for i in range(len(col_indices))]
-    mask[row_indices, col_indices] = 1
-    return mask
-
-
-def get_score(y_pred, truths):
-    return fbeta_score(truths, y_pred, beta=2, average='samples')
 
 
 def test(test_loader, model, criterion):
