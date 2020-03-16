@@ -1,0 +1,14 @@
+model_name = 'ResNet101'
+fine_size = 320
+batch_size = 16
+log_dir = '/exp001_train/'
+weight_name = 'exp001'
+all_epoch = 20
+cuda = True
+lr = 0.0001
+momentum = 0.9
+weight_decay = 1e-6
+optim = 'adam'
+save_weight = 'dense121size288'
+valid_set = 1
+all_fold = 5
