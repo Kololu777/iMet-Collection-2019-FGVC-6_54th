@@ -3,7 +3,7 @@
 The detailed description is here:<br>
 https://www.kaggle.com/c/imet-2019-fgvc6<br>
 
-### detail
+## detail
 *model: SEResNext50,SEResNext101 
 *batchsize:64
 *input_size:320
