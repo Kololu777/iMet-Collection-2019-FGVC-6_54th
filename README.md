@@ -1,5 +1,5 @@
 # iMet-Collection-2019-FGVC-6_54th
-**The solution t0 iMet-Collection-2019 FGVC 6**<br><br>
+**The solution to iMet-Collection-2019 FGVC 6**<br><br>
 The detailed description is here:<br>
 https://www.kaggle.com/c/imet-2019-fgvc6<br>
 
