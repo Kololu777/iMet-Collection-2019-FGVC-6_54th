@@ -13,7 +13,7 @@ https://www.kaggle.com/c/imet-2019-fgvc6<br>
 * Final model:5fold+SEResNext50*0.2+SEResNext50*0.8 
 * Private Leader board 0.631
 
-##How to run
+## How to run
 1.config.py <br>
 * fold=0,1,2,3,4
 * model_name=resnet50,resnet101
@@ -22,11 +22,11 @@ https://www.kaggle.com/c/imet-2019-fgvc6<br>
 ### predict
 * python predict.py
 
-##Requirements
-*numpy==1.18.1
-*opencv==4.1.2.30
-*Pillow==6.2.2
-*scikit-image==0.16.2
-*scikit-learn==0.20.1
-*torch==1.1.0
-*torchvision==0.3.0
+## Requirements
+* numpy==1.18.1
+* opencv==4.1.2.30
+* Pillow==6.2.2
+* scikit-image==0.16.2
+* scikit-learn==0.20.1
+* torch==1.1.0
+* torchvision==0.3.0
