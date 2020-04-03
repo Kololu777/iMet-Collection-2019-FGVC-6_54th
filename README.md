@@ -10,7 +10,7 @@ https://www.kaggle.com/c/imet-2019-fgvc6<br>
 * optimizer:Adam
 * epochs:20
 * lr:epoch<18 0.0001 20<0.00005
-* Final model:5fold+SEResNext50*0.2+SEResNext50*0.8 
+* Final model:5fold+SEResNext50x0.2+SEResNext50x0.8 
 * Private Leader board 0.631
 
 ## How to run
